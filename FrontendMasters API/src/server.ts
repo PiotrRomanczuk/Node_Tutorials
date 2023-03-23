@@ -1,5 +1,6 @@
 import express from 'express';
 import path from "path";
+import router from './router';
 
 const app = express();
 /**
@@ -10,6 +11,11 @@ app.get('/', function (req, res) {
 	// sending back an HTML that browser can see on the screen
 	res.sendFile(path.resolve('./pages/index.html'));
 });
+
+app.use('/api', router)
+
+
+
 
 // app.get('/', (req, res) => {
 // 	console.log('Hello from Express');
